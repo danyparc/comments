@@ -11,12 +11,12 @@ Before start its neccesary to have a postgres instance running locally, you can 
 
 You can run this two commands in separated terminals:
 
-### API
+## API
 ### `yarn run start-api`
 
 Runs the ExpressJS server and tries to connect it to the database.
 
-### Frontend
+## Frontend
 ### `yarn start`
 
 Launches the REACT app in the development mode.\
