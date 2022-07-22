@@ -1,5 +1,5 @@
 {
-  "name": "density-interview",
+  "name": "messages-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,13 +11,27 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/node": "^7.18.9",
+    "@babel/preset-env": "^7.18.9"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-api": "babel api/src/ --out-dir api/dist && node api/dist/api.js",
+    "build-api": "babel api/src/ --out-dir api/dist",
+    "dev-api": "nodemon api/src/api.js --exec babel-node"
   },
   "eslintConfig": {
     "extends": [
