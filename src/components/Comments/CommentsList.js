@@ -7,22 +7,14 @@ function CommentsList() {
   // const [status, setStatus] = useState()
   
   useEffect(() => {
-    getComments().then(comments => setComments(comments))
-    // setComments([
-    //   { id: 21, email: 'dany@hola.com', content: 'Esto es mi primer comment' },
-    //   { id: 22, email: 'john.doe@localhost.com', content: 'Hello from Amsterdam' },
-    //   { id: 23, email: 'ramiro.ramirez@meme.com', content: 'Nice page broh' },
-    // ])
-
-    // return () => {
-    //   // second
-    // }
+    getComments()
+      .then(comments => setComments(comments))
   }, [setComments])
   
 
   return (
     <div>
-      {comments.map((comment) => <Comment key={comment.id} email={comment.email} content={comment.content} />)}
+      {comments.map((comment) => <Comment key={comment.id} id={comment.id} email={comment.email} content={comment.content} />)}
     </div>
   )
 }

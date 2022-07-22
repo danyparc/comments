@@ -9,9 +9,9 @@ app.use(express.json())
 
 app.get('/api/v1', (_, res) => res.send('Welcome to Comments API'))
 
-app.get('/api/v1/comments', async (req, res) => {
+app.get('/api/v1/comments', async (_, res) => {
   try {
-    const comments = await Comment.findAll()
+    const comments = await Comment.findAll({order: [['createdAt', 'DESC']]})
     console.log('>>> Comments retrieved')
     res.status(200).json(comments)
   } catch (error) {
