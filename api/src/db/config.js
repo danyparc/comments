@@ -1,8 +1,18 @@
+import 'dotenv/config'
 import Sequelize from "sequelize"
-// Option 1: Passing a connection URI
-// const sequelize = new Sequelize('postgres://danyparc:admin@example.com:5432/postgres') // Example for postgres
-export const sequelize = new Sequelize('messages', 'danyparc', 'admin', {
-  host: 'localhost',
+
+
+const envars = {
+  DB_DATABASE: process.env.DB_DATABASE,
+  DB_USER: process.env.DB_USER,
+  DB_PASS: process.env.DB_PASS,
+  DB_HOST: process.env.DB_HOST,
+};
+
+console.log(envars);
+
+export const sequelize = new Sequelize(envars.DB_DATABASE, envars.DB_USER, envars.DB_PASS, {
+  host: envars.DB_HOST,
   dialect: 'postgres',
   logging: false,
 });
